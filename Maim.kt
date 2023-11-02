@@ -1,32 +1,31 @@
-fun main() {
-    println("Введите целое число")
-    /**
-     * Результат функции println всегда представляет объект типа String.
-     * Поэтому надо преобразовать строку в целое число. Если ввести что-то кроме целого числа,
-     * то будет ошибка NumberFormatException
-     */
-    try {
-        var input = readLine()?.toInt()
-    } catch (e: NumberFormatException) {
+fun main () {
+    println("Hello, World!")
+    val myName: String = "Nastya"
+    val mySurname: String = "Moskvicheva"
+    val myAge: Int = 30
+    val tellTheTruth: Boolean = true
+    val myArray = arrayOf<Int>(1, 2, 3, 4, 5) //массив элементов
+println (myName)
+println (mySurname)
+println (myAge)
+println(tellTheTruth)
+println(myArray[0]) //вывести  значение 1 элемента из массива
+    val a = 2
+    val b = 22
+    var c = 900
+    println(a+b) //арифметические операторы
+    println(a>b) //операторы сравнения
+    println(a<b)
+    println(b/a)
+    println((a + b) < (a + c))
+    println((a < b) && (b < c)) //логические операторы
+    println("Привет! Меня зовут $myName $mySurname и я закончила вводный блок заданий")
 
-        println("такое себе целое число")
-        return
-        /**
-         * Не знаю куда return засунуть. Получилось методом тыка. Была цель - после введения не
-         * целого числа последующий код не должен выполнятся - это работает. Но еще мне хотелось,
-         * чтобы при введении целого числа повторный ввод не запрашивался - не получилось.
-         * Если удалить обработку исключения, то будет 1 раз запрашиваться как положено.
-         */
-    }
-    var input = readLine()?.toInt() //преобразование строки
-    var a = input
-    if (a != null && a > 0) {
-        println("вы ввели положительное число")
-    }
-    else if (a != null && a < 0) {
-        println("вы ввели отрицательное число")
-    }
-    else if (a == 0) {
-        println("вы ввели 0")
-    }
+    /**
+     * сейчас еще запрошу у пользователя ввод из консоли, сохраню его в переменную
+     * и затем выведу эту переменную на экран
+     */
+    println("Поздоровайся:")
+    val input = readLine() // Считывает строку из стандартного ввода
+    println("И тебе $input")
 }
