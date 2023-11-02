@@ -1,0 +1,15 @@
+fun main() {
+    println("Введите целое число")
+    try {
+        var input = readLine()?.toInt()
+    } catch (e: NumberFormatException) {
+        println("Такое себе целое число")
+    } finally {
+        println("Конец программы")
+    }
+    val myArray = arrayOf<Int>(1, 2, 3, 4)
+    try {
+    println(myArray [4])
+    } catch (e: ArrayIndexOutOfBoundsException) {
+        println("Тут пусто")
+    }
