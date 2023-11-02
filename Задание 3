@@ -1,0 +1,30 @@
+fun main() {
+    println(summator(arrayOf<Int>()))
+    zikl()
+}
+
+fun summator(myArray: Array<Int>): Int? {
+    var myArray = arrayOf<Int>(1, 18, 1555, 1, 10, -11)
+    var sum = 0
+    for (i in myArray) {
+        if (i > 10) {
+            sum += i
+        } else if (i < 0) return sum
+    }
+    return sum
+}
+
+fun zikl() {
+    vne@ for (i in 1..10) {
+        if ((i == 3) || (i == 7)) {
+            continue
+        }
+        println(i)
+        vnut@ for (j in 10..99) {
+            var sum = 0
+            if (sum > 50)
+                sum += j
+            break@vnut
+        }
+    }
+}
