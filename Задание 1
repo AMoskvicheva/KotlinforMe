@@ -1,0 +1,11 @@
+fun main() {
+    println("Введите целое число")
+    var a = readLine()?.toInt()
+    if (a != null && a > 0) {
+        println("вы ввели положительное число")
+    } else if (a != null && a < 0) {
+        println("вы ввели отрицательное число")
+    } else if (a == 0) {
+        println("вы ввели 0")
+    }
+}
