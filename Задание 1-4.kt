@@ -41,3 +41,21 @@ infix fun Int.isGreater(a: Int): Boolean {
     return (this > a)
 
 }
+
+/** Задание 4: Создайте рекурсивную функцию generateSequence, которая принимает целое число n и
+ * генерирует последовательность чисел от 1 до n. Используйте аннотацию tailrec для оптимизации.
+ */
+fun main() {
+    println(generateSequence(9000000))
+}
+
+tailrec fun generateSequence(n: Int): Int {
+    for (i in 1..n)
+        if (i == n) {
+            return n
+        } else println(i)
+    return generateSequence(n)
+    /** честно сказать, второй return я добавила благодаря автоматическим подсказкам и
+     * не понимаю почему без него ошибка
+     */
+}
