@@ -59,3 +59,4 @@ tailrec fun generateSequence(n: Int): Int {
      * не понимаю почему без него ошибка
      */
 }
+
