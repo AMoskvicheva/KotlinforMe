@@ -59,4 +59,31 @@ tailrec fun generateSequence(n: Int): Int {
      * не понимаю почему без него ошибка
      */
 }
+/**
+ * Задание 5:Создайте список имен и используйте функции let, run, also, apply и with для выполнения
+ * различных операций над этим списком (например, добавьте имя, удалите имя, переверните список).
+ */
+fun main() {
+    var twilight = mutableListOf("Bella", "Edward", "Jacob", "Rosalie", "Alice", "Jasper")
+    twilight.let {
+        println("Элементы списка до добавления нового: $it")
+        it.add("Victoria")
+        println("С новым элементом:$it")
+    }
+    twilight.run {
+        this.remove("Victoria")
+        println("Минус Виктория: $this")
+    }
+    twilight
+        .also { println("Уберем первых двух: ${it.drop(2)}") } // Убрать элемент по номеру
+        .add("Aro")
+    println("Со злодеем из второй части: $twilight")
 
+    twilight
+        .apply { this.reverse() } // Развернуть элементы списка
+    println("Кто был последним станет первым: $twilight")
+
+    with(twilight) {
+        println(this.subList(5,7)) //Получение части списка по указанному диапазону(не включительно)
+    }
+}
