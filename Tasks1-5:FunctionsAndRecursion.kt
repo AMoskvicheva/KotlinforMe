@@ -3,15 +3,17 @@
  * двух разных пар чисел.
  */
 fun main() {
-    println(maxOfTwo(60, 100))
-   println(maxOfTwo(33, 3))
+    maxOfTwo(6, -6)
+    maxOfTwo(50, 50)
 }
 
-fun maxOfTwo(a: Int, b: Int): Int {
+fun maxOfTwo(a: Int, b: Int) {
     if (a > b) {
-        return a
+        println(a)
+    } else if (b == a) {
+        println("числа равны")
     } else {
-        return b
+        println(b)
     }
 }
 
@@ -46,18 +48,16 @@ infix fun Int.isGreater(a: Int): Boolean {
  * генерирует последовательность чисел от 1 до n. Используйте аннотацию tailrec для оптимизации.
  */
 fun main() {
-    println(generateSequence(9000000))
+    generateSequence(1000)
 }
 
-tailrec fun generateSequence(n: Int): Int {
-    for (i in 1..n)
-        if (i == n) {
-            return n
-        } else println(i)
-    return generateSequence(n)
-    /** честно сказать, второй return я добавила благодаря автоматическим подсказкам и
-     * не понимаю почему без него ошибка
-     */
+tailrec fun generateSequence(n: Int, i: Int = 1) {
+    println(i)
+    if (i == n) {  // base case
+        return
+    } else {
+        generateSequence(n, i + 1) // recursive case
+    }
 }
 /**
  * Задание 5:Создайте список имен и используйте функции let, run, also, apply и with для выполнения
