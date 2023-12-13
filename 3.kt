@@ -7,6 +7,7 @@ package com.example.oo
 fun main() {
     Singleton.printMessage()
 }
+
 object Singleton {
     fun printMessage() {
         println("Я Singleton, но я не одинок.")
