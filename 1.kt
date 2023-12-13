@@ -14,9 +14,9 @@ open class Car(model: String, color: String, year: String) {
 }
 
 fun main() {
-    val myCar1 = Car(model = "Priora", color = "violet", year = "2000")
-    val myCar2 = Car(model = "Niva", color = "white", year = "1987")
-    val myCar3 = Car(model = "Volkswagen", color = "red", year = "2023")
+    val myCar1 = Car("Priora", "violet", "2000")
+    val myCar2 = Car("Niva", "white", "1987")
+    val myCar3 = Car("Volkswagen", "red", "2023")
     myCar1.drive()
     myCar2.drive()
     myCar3.drive()
