@@ -5,19 +5,19 @@ package com.example.oo
  * реализовать проверку возраста в сеттере, чтобы убедиться, что возраст неотрицательный.
  */
 fun main() {
-val sant = Person2()
-sant.name = "Santa"
-println(sant.name)
-val old = Person2()
-old.age = 75
-println(old.age)
-old.age = -90 //не поменяется потому что есть проверка на отрицательное число
-println(old.age)
+    val sant = Person2()
+    sant.name = "Santa"
+    println(sant.name)
+    val old = Person2()
+    old.age = 75
+    println(old.age)
+    old.age = -90 //не поменяется потому что есть проверка на отрицательное число
+    println(old.age)
 
 }
+
 class Person2 {
     var name: String = "Person"
-
         set(value) {
             println("Использую сеттер")
             field = value
@@ -29,8 +29,9 @@ class Person2 {
     var age: Int = 75
         set(value) {
             println("Использую сеттер для age")
-            if (value>0)
+            if (value > 0) {
                 field = value
+            }
         }
         get() {
             println("Использую геттер для age")
