@@ -5,21 +5,18 @@ package com.example.oo
  * или три целых числа.
  */
 class MathUtils() {
-    fun add(a: Int, b: Int) {
-        var sum: Int = a + b
-        println(sum)
+    fun add(a: Int, b: Int): Int {
+        return a + b
     }
 
-    fun add(a: Int, b: Int, c: Int) {
-        var sum: Int = a + b + c
-        println(sum)
+    fun add(a: Int, b: Int, c: Int): Int {
+        return a + b + c
     }
 }
 
 fun main() {
     var ein = MathUtils()
     var zwei = MathUtils()
-    ein.add(3, 8)
-    zwei.add(44, -6, 2)
-
+    println(ein.add(3, 8))
+    println(zwei.add(44, -6, 2))
 }
