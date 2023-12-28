@@ -6,15 +6,11 @@ package com.example
  * и Airplane и вызовите их методы fly() и navigate().
  */
 interface Flyable {
-    fun fly() {
-
-    }
+    fun fly()
 }
 
 interface Navigable {
-    fun navigate() {
-
-    }
+    fun navigate()
 }
 
 class Bird() : Flyable, Navigable {
