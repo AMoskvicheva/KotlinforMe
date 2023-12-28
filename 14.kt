@@ -6,21 +6,13 @@ package com.example
  * Реализуйте этот интерфейс в классе UserRepository для работы с объектами класса User.
  */
 interface Repository<T> {
-    fun save(item: T) {
-
-    }
-
-    fun delete(item: T) {
-    }
-
-    fun getAll(): List<T> {
-        var polsovateli = mutableListOf<T>()
-        return polsovateli
-    }
+    fun save(item: T)
+    fun delete(item: T)
+    fun getAll(): List<T>
 }
 
-class UserRepository() : Repository<Users> {
-    var polsovateli = mutableListOf<Users>()
+class UserRepository(private val polsovateli: MutableList<Users> = mutableListOf()) :
+    Repository<Users> {
     override fun save(item: Users) {
         polsovateli.add(item)
     }
@@ -34,17 +26,17 @@ class UserRepository() : Repository<Users> {
     }
 }
 
-class Users(var name: String) {
+class Users(val name: String) {
     override fun toString(): String {
         return "$name"
     }
 }
 
 fun main() {
-    var pers1 = Users("Santa Claus")
-    var pers2 = Users("Ded Moroz")
-    var pers3 = Users("Snegurochka")
-    val userRepository = UserRepository()
+    val pers1 = Users("Santa Claus")
+    val pers2 = Users("Ded Moroz")
+    val pers3 = Users("Snegurochka")
+    val userRepository = UserRepository(mutableListOf<Users>())
     userRepository.save(pers1)
     userRepository.save(pers2)
     userRepository.save(pers3)
