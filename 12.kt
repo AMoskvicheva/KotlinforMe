@@ -18,8 +18,8 @@ class CanFly() {
 }
 
 class Bat() {
-    var eatmilk: Mammal = Mammal()
-    var flyable: CanFly = CanFly()
+    val eatmilk = Mammal()
+    val flyable = CanFly()
 }
 
 fun main() {
