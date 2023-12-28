@@ -4,28 +4,28 @@ package com.example
  * 8. Создайте абстрактный класс Shape с абстрактным методом area(), затем создайте классы Circle и
  * Rectangle, реализующие этот метод. Создайте объекты Circle и Rectangle и выведите их площадь.
  */
+
 abstract class Shape() {
-    abstract fun area(a: Int, h: Int): Int
+    abstract fun area(): Double
 }
 
-class Circle() : Shape() {
-    override fun area(a: Int, h: Int): Int {
-        var d = a * a
-        var s: Int = 3 * d
+class Circle(val r: Double) : Shape() {
+    override fun area(): Double {
+        val s: Double = kotlin.math.PI * r * r
         return s
     }
 }
 
-class Rectangle() : Shape() {
-    override fun area(a: Int, h: Int): Int {
-        var s: Int = a * h
+class Rectangle(val a: Double, val b: Double) : Shape() {
+    override fun area(): Double {
+        val s: Double = a * b
         return s
     }
 }
 
 fun main() {
-    var redCircle = Circle()
-    println(redCircle.area(5, 0))
-    var blueRectangle = Rectangle()
-    println(blueRectangle.area(9, 4))
+    val circle = Circle(4.0)
+    println(circle.area())
+    val rectangle = Rectangle(9.5, 4.0)
+    println(rectangle.area())
 }
