@@ -13,25 +13,18 @@ sealed class MathOperation {
 }
 
 fun schitalka(operation: MathOperation, a: Int, b: Int): Int? {
-    if (operation == MathOperation.Add) {
-        return a + b
-
-    } else if (operation == MathOperation.Subtract) {
-        return a - b
-
-    } else if (operation == MathOperation.Multiply) {
-        return a * b
-
-    } else if (operation == MathOperation.Divide) {
-        if (b != 0) return a / b
-        else {
+    when (operation) {
+        MathOperation.Add -> return a + b
+        MathOperation.Subtract -> return a - b
+        MathOperation.Multiply -> return a * b
+        MathOperation.Divide -> try {
+            return a / b
+        } catch (e: ArithmeticException) {
+            println("на ноль делить нельзя")
             return null
         }
-    } else {
-        return null
     }
 }
-
 fun main() {
     val resultAdd = schitalka(MathOperation.Add, 8, 8)
     println(resultAdd)
