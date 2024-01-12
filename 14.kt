@@ -11,8 +11,9 @@ interface Repository<T> {
     fun getAll(): List<T>
 }
 
-class UserRepository(private val polsovateli: MutableList<Users> = mutableListOf()) :
+class UserRepository :
     Repository<Users> {
+    private val polsovateli: MutableList<Users> = mutableListOf()
     override fun save(item: Users) {
         polsovateli.add(item)
     }
@@ -28,7 +29,7 @@ class UserRepository(private val polsovateli: MutableList<Users> = mutableListOf
 
 class Users(val name: String) {
     override fun toString(): String {
-        return "$name"
+        return name
     }
 }
 
@@ -36,7 +37,7 @@ fun main() {
     val pers1 = Users("Santa Claus")
     val pers2 = Users("Ded Moroz")
     val pers3 = Users("Snegurochka")
-    val userRepository = UserRepository(mutableListOf<Users>())
+    val userRepository = UserRepository()
     userRepository.save(pers1)
     userRepository.save(pers2)
     userRepository.save(pers3)
