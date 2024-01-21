@@ -1,35 +1,18 @@
-package com.example.oo
+package com
 
 /**
- * 6. Создайте класс Animal с методом makeSound(), затем создайте классы Dog и Cat, наследующие от
- * Animal, и переопределите метод makeSound(). Создайте объекты Dog и Cat и вызовите
- * их методы makeSound().
+ * 6. Используя ленивые операции, создайте последовательность чисел от 1 до 1000, затем используйте
+ * filter чтобы оставить только числа, делящиеся на 5, затем map чтобы умножить каждое число на 2,
+ * и take чтобы взять первые 20 элементов этой последовательности.
  */
-
-open class Animal() {
-    open fun makeSound() { // функции по умолчанию final
-        println("какой-то звериный звук")
+val sequence = sequence {
+    var num = 0
+    while (num < 1001) {
+        yield(num++)
     }
 }
-
+val filtSeq = sequence.filter { it % 5 == 0 }.map { it * 2 }
+val result = filtSeq.take(20).toList()
 fun main() {
-    class Cat : Animal() {
-
-        override fun makeSound() {
-            println("мяу-мяу")
-        }
-    }
-
-    class Dog : Animal() {
-        override fun makeSound() {
-            println("гау-гау")
-        }
-    }
-
-    val anyAnimal = Animal()
-    anyAnimal.makeSound()
-    val kitty = Cat()
-    kitty.makeSound()
-    val rex = Dog()
-    rex.makeSound()
+    println(result)
 }
