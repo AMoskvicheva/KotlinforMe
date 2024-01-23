@@ -13,9 +13,9 @@ fun main() {
     println("Первое обращение $lazyValue")
     println("Второе обращение $lazyValue")
     //далее выводится задание 9
-    println(calculate(1, 2, operation1))
-    println(calculate(8, 2, operation2))
-    println(calculate(2, 2, operation3))
+    println(operation1)
+    println(operation2)
+    println(operation3)
     //10 задание
     println(sum)
     println(sum2)
@@ -34,9 +34,9 @@ fun calculate(a: Int, b: Int, operation: (Int, Int) -> Int): Int {
     return operation(a, b)
 }
 
-val operation1: (Int, Int) -> Int = { a, b -> a + b }
-val operation2: (Int, Int) -> Int = { a, b -> a - b }
-val operation3: (Int, Int) -> Int = { a, b -> a * b }
+val operation1 = calculate(1, 2) { a, b -> a + b }
+val operation2 = calculate(7, 9) { a, b -> a - b }
+val operation3 = calculate(7, 3) { a, b -> a * b }
 
 /**
  * 10. Создайте коллекцию чисел и используйте fold или reduce чтобы посчитать их сумму,
