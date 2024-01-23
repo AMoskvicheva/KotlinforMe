@@ -12,8 +12,8 @@ fun main() {
     println(dublSpisok)
     //далее выводятся следующие задания
     printLength()
-    println(high(6, lambda))
-    println(kvadratisch(9, lambda2))
+    println(lambdaResult)
+    println(lambdaResult2)
 }
 
 /**
@@ -35,7 +35,7 @@ fun high(num: Int, lambda: (Int) -> String): String {
     return lambda(num)
 }
 
-val lambda: (Int) -> String = { number: Int -> number.toString() }
+val lambdaResult = high(6) { number: Int -> number.toString() }
 
 /**
  * 4. Создайте лямбда-функцию, которая принимает число и возвращает его квадрат.
@@ -48,4 +48,4 @@ fun kvadratisch(chi: Int, lambda2: (Int) -> Int): String {
 
 }
 
-val lambda2: (Int) -> Int = { chislo: Int -> chislo * chislo }
+val lambdaResult2 = kvadratisch(9) { chislo: Int -> chislo * chislo }
