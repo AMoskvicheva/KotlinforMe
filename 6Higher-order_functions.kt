@@ -11,8 +11,12 @@ val sequence = sequence {
         yield(num++)
     }
 }
-val filtSeq = sequence.filter { it % 5 == 0 }.map { it * 2 }
-val result = filtSeq.take(20).toList()
+val filtSeq = sequence
+    .filter { it % 5 == 0 }
+    .map { it * 2 }
+    .take(20)
+    .toList()
+
 fun main() {
-    println(result)
+    println(filtSeq)
 }
